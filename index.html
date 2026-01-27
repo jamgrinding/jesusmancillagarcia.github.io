@@ -10,7 +10,8 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial Black', sans-serif; /* Using a heavy font like your screenshot */
+            /* Added Stack Sans to the stack */
+            font-family: 'Stack Sans', 'Arial Black', sans-serif; 
         }
 
         body {
@@ -33,7 +34,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            opacity: 0.2; /* Faded effect from your screenshot */
+            opacity: 0.2;
         }
 
         .background-overlay img {
@@ -45,35 +46,33 @@
         .nav-container {
             display: flex;
             flex-direction: column;
-            width: 280px; /* Matching your Bubble 'Width' setting */
-            margin-top: 60px; /* Matching your Bubble 'Top Margin' */
+            width: 280px; 
+            margin-top: 60px;
             text-align: left;
         }
 
-        /* 4. Link Styling */
+        /* 4. Link Styling - Adjusted for Overlap */
         .nav-link {
             text-decoration: none;
-            font-size: 3.5rem; /* Large, bold typography */
-            line-height: 0.85;  /* Tight spacing like the screenshot */
-            letter-spacing: -2px;
+            font-size: 4rem; /* Slightly larger to enhance overlap effect */
+            line-height: 0.75;  /* Reduced from 0.85 to force pixel overlapping */
+            letter-spacing: -3px; /* Tighter horizontal spacing */
             font-weight: 900;
             text-transform: uppercase;
+            display: block;
             transition: transform 0.2s ease;
         }
 
         .nav-link:hover {
             transform: scale(1.05);
-            opacity: 0.8;
+            z-index: 10; /* Brings the hovered item to the front */
+            opacity: 1;
         }
 
-        /* 5. Colors from Screenshot */
+        /* 5. Colors and Category Filter */
         .pink { color: #FF00FF; }
-        .red { color: #FF0000; }
         .blue { color: #3333FF; }
-        .green { color: #00FF00; }
-        .cyan { color: #00FFFF; }
         .yellow { color: #FFFF00; }
-        .purple { color: #800080; }
         .black { color: #000000; }
 
     </style>
