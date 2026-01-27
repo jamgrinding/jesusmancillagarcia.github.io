@@ -6,54 +6,125 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <style>
+      /* --- Base Reset --- */
       html, body {
         margin: 0;
         padding: 0;
         background: #ffffff;
         height: 100%;
+        overflow: hidden; /* Prevent scroll if content is fixed size */
       }
 
       body {
         display: flex;
         align-items: center;
         justify-content: center;
+        font-family: "SF Pro Text", "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       }
 
+      /* --- Frame Container --- */
       .frame {
         width: 402px;
         height: 874px;
+        position: relative; /* Crucial for positioning the text overlay */
         display: flex;
         align-items: center;
         justify-content: center;
+        background-color: white;
+        overflow: hidden; /* Clips text if it goes slightly outside */
       }
 
-      img {
-        width: 402px;
-        height: 874px;
-        image-rendering: auto;
-        image-rendering: crisp-edges;
+      /* --- Background Image --- */
+      .bg-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensures image covers frame cleanly */
         image-rendering: -webkit-optimize-contrast;
-        max-width: 100vw;
-        max-height: 100vh;
       }
 
-      /* Scale down cleanly on smaller screens */
+      /* --- Menu Overlay Container --- */
+      .menu-overlay {
+        position: absolute;
+        bottom: 50px; /* Adjust this to move the whole text block up/down */
+        left: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centers text horizontally */
+        justify-content: flex-end;
+        z-index: 10;
+        /* Disable pointer events on the container so clicks pass through gaps, 
+           but re-enable on the links themselves */
+        pointer-events: none; 
+      }
+
+      /* --- Links Styling --- */
+      .menu-link {
+        pointer-events: auto; /* Re-enable clicking */
+        text-decoration: none;
+        font-weight: 900; /* "Heavy" weight */
+        
+        /* Responsive Font Sizing: 
+           This tries to be as close to 95pt as possible while fitting the width.
+           clamp(minimum, preferred, maximum)
+        */
+        font-size: clamp(60px, 20vw, 95px);
+        
+        /* Tight line-height creates the vertical overlap */
+        line-height: 0.65; 
+        
+        /* Tight letter-spacing matches the "SF Pro" tight look */
+        letter-spacing: -0.04em; 
+        
+        transition: transform 0.2s ease;
+      }
+
+      /* Hover Effect (Optional - adds a little pop) */
+      .menu-link:hover {
+        transform: scale(1.05);
+        z-index: 20; /* Brings hovered item to very top */
+      }
+
+      /* --- Specific Colors --- */
+      .link-about {
+        color: #FF00FF; /* Magenta */
+      }
+
+      .link-writing {
+        color: #3300FF; /* Electric Blue/Indigo */
+      }
+
+      .link-wiki {
+        color: #00CC00; /* Vivid Green */
+      }
+
+      .link-contact {
+        color: #000000; /* Black */
+      }
+
+      /* --- Responsive adjustments for smaller screens --- */
       @media (max-width: 402px), (max-height: 874px) {
-        img {
+        .frame {
           width: 100%;
-          height: auto;
+          height: 100%;
         }
       }
     </style>
   </head>
   <body>
+    
     <div class="frame">
       <img
+        class="bg-image"
         src="coming sooon.png"
-        width="402"
-        height="874"
-        alt="Coming soon"
+        alt="Background Art"
       />
+
+      <nav class="menu-overlay">
+        <a href="/" class="https://jesusmancillagarcia.com/">About Me</a>
+        <a href="/" class="https://jesusmancillagarcia.com/">Writing</a>
+        <a href="/" class="https://jesusmancillagarcia.com/">Wikipedias</a>
+        <a href="/" class="https://jesusmancillagarcia.com/">Contact</a>
+      </nav>
+
     </div>
-  </body>
-</html>
