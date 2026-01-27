@@ -1,130 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Jesus Mancilla-Garcia</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jesus Mancilla Garcia</title>
     <style>
-      /* --- Base Reset --- */
-      html, body {
-        margin: 0;
-        padding: 0;
-        background: #ffffff;
-        height: 100%;
-        overflow: hidden; /* Prevent scroll if content is fixed size */
-      }
-
-      body {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: "SF Pro Text", "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      }
-
-      /* --- Frame Container --- */
-      .frame {
-        width: 402px;
-        height: 874px;
-        position: relative; /* Crucial for positioning the text overlay */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: white;
-        overflow: hidden; /* Clips text if it goes slightly outside */
-      }
-
-      /* --- Background Image --- */
-      .bg-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Ensures image covers frame cleanly */
-        image-rendering: -webkit-optimize-contrast;
-      }
-
-      /* --- Menu Overlay Container --- */
-      .menu-overlay {
-        position: absolute;
-        bottom: 50px; /* Adjust this to move the whole text block up/down */
-        left: 0;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Centers text horizontally */
-        justify-content: flex-end;
-        z-index: 10;
-        /* Disable pointer events on the container so clicks pass through gaps, 
-           but re-enable on the links themselves */
-        pointer-events: none; 
-      }
-
-      /* --- Links Styling --- */
-      .menu-link {
-        pointer-events: auto; /* Re-enable clicking */
-        text-decoration: none;
-        font-weight: 900; /* "Heavy" weight */
-        
-        /* Responsive Font Sizing: 
-           This tries to be as close to 95pt as possible while fitting the width.
-           clamp(minimum, preferred, maximum)
-        */
-        font-size: clamp(60px, 20vw, 95px);
-        
-        /* Tight line-height creates the vertical overlap */
-        line-height: 0.65; 
-        
-        /* Tight letter-spacing matches the "SF Pro" tight look */
-        letter-spacing: -0.04em; 
-        
-        transition: transform 0.2s ease;
-      }
-
-      /* Hover Effect (Optional - adds a little pop) */
-      .menu-link:hover {
-        transform: scale(1.05);
-        z-index: 20; /* Brings hovered item to very top */
-      }
-
-      /* --- Specific Colors --- */
-      .link-about {
-        color: #FF00FF; /* Magenta */
-      }
-
-      .link-writing {
-        color: #3300FF; /* Electric Blue/Indigo */
-      }
-
-      .link-wiki {
-        color: #00CC00; /* Vivid Green */
-      }
-
-      .link-contact {
-        color: #000000; /* Black */
-      }
-
-      /* --- Responsive adjustments for smaller screens --- */
-      @media (max-width: 402px), (max-height: 874px) {
-        .frame {
-          width: 100%;
-          height: 100%;
+        /* 1. Global Reset & Fonts */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial Black', sans-serif; /* Using a heavy font like your screenshot */
         }
-      }
+
+        body {
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* 2. Background Image Container */
+        .background-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0.2; /* Faded effect from your screenshot */
+        }
+
+        .background-overlay img {
+            max-width: 600px;
+            filter: grayscale(100%);
+        }
+
+        /* 3. Navigation Container */
+        .nav-container {
+            display: flex;
+            flex-direction: column;
+            width: 280px; /* Matching your Bubble 'Width' setting */
+            margin-top: 60px; /* Matching your Bubble 'Top Margin' */
+            text-align: left;
+        }
+
+        /* 4. Link Styling */
+        .nav-link {
+            text-decoration: none;
+            font-size: 3.5rem; /* Large, bold typography */
+            line-height: 0.85;  /* Tight spacing like the screenshot */
+            letter-spacing: -2px;
+            font-weight: 900;
+            text-transform: uppercase;
+            transition: transform 0.2s ease;
+        }
+
+        .nav-link:hover {
+            transform: scale(1.05);
+            opacity: 0.8;
+        }
+
+        /* 5. Colors from Screenshot */
+        .pink { color: #FF00FF; }
+        .red { color: #FF0000; }
+        .blue { color: #3333FF; }
+        .green { color: #00FF00; }
+        .cyan { color: #00FFFF; }
+        .yellow { color: #FFFF00; }
+        .purple { color: #800080; }
+        .black { color: #000000; }
+
     </style>
-  </head>
-  <body>
-    
-    <div class="frame">
-      <img
-        class="bg-image"
-        src="coming sooon.png"
-        alt="Background Art"
-      />
+</head>
+<body>
 
-      <nav class="menu-overlay">
-        <a href="/" class="https://jesusmancillagarcia.com/">About Me</a>
-        <a href="/" class="https://jesusmancillagarcia.com/">Writing</a>
-        <a href="/" class="https://jesusmancillagarcia.com/">Wikipedias</a>
-        <a href="/" class="https://jesusmancillagarcia.com/">Contact</a>
-      </nav>
-
+    <div class="background-overlay">
+        <img src="your-image-here.jpg" alt="Background Graphic">
     </div>
+
+    <nav class="nav-container">
+        <a href="#" class="nav-link pink">ABOUT ME</a>
+        <a href="#" class="nav-link red">PSG3</a>
+        <a href="#" class="nav-link blue">MY CAREER</a>
+        <a href="#" class="nav-link green">INSIGHTS</a>
+        <a href="#" class="nav-link cyan">SPORTS</a>
+        <a href="#" class="nav-link yellow">WIKIPEDIA CONTS.</a>
+        <a href="#" class="nav-link purple">REVIEWS</a>
+        <a href="#" class="nav-link black">CONTACT</a>
+    </nav>
+
+</body>
+</html>
