@@ -1,94 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jesus Mancilla Garcia</title>
-    <style>
-        /* 1. Global Reset & Fonts */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            /* Added Stack Sans to the stack */
-            font-family: 'Stack Sans', 'Arial Black', sans-serif; 
-        }
+  <meta charset="UTF-8" />
+  <title>Jesus Mancilla-Garcia</title>
 
-        body {
-            background-color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
+  <!-- Critical for mobile sharpness -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-        /* 2. Background Image Container */
-        .background-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0.2;
-        }
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+    }
 
-        .background-overlay img {
-            max-width: 600px;
-            filter: grayscale(100%);
-        }
+    /* Container that respects the image's native size */
+    .image-wrapper {
+      width: 100%;
+      max-width: 402px; /* EXACT image width */
+      margin: 0 auto;
+    }
 
-        /* 3. Navigation Container */
-        .nav-container {
-            display: flex;
-            flex-direction: column;
-            width: 280px; 
-            margin-top: 60px;
-            text-align: left;
-        }
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
 
-        /* 4. Link Styling - Adjusted for Overlap */
-        .nav-link {
-            text-decoration: none;
-            font-size: 4rem; /* Slightly larger to enhance overlap effect */
-            line-height: 0.75;  /* Reduced from 0.85 to force pixel overlapping */
-            letter-spacing: -3px; /* Tighter horizontal spacing */
-            font-weight: 900;
-            text-transform: uppercase;
-            display: block;
-            transition: transform 0.2s ease;
-        }
+      /* Force crisp rendering */
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
 
-        .nav-link:hover {
-            transform: scale(1.05);
-            z-index: 10; /* Brings the hovered item to the front */
-            opacity: 1;
-        }
-
-        /* 5. Colors and Category Filter */
-        .pink { color: #FF00FF; }
-        .blue { color: #3333FF; }
-        .yellow { color: #FFFF00; }
-        .black { color: #000000; }
-
-    </style>
+      /* Prevent subpixel blur */
+      transform: translateZ(0);
+      backface-visibility: hidden;
+    }
+  </style>
 </head>
 <body>
-
-    <div class="background-overlay">
-        <img src="coming sooon.png" alt="Background Graphic">
-    </div>
-
-    <nav class="nav-container">
-        <a href="#" class="nav-link pink">About Me</a>
-        <a href="#" class="nav-link blue">Writing</a>
-        <a href="#" class="nav-link yellow">Wikipedias</a>
-        <a href="#" class="nav-link black">Contact</a>
-    </nav>
-
+  <div class="image-wrapper">
+    <img
+      src="hero.png"
+      alt="Coming soon"
+      width="402"
+      height="874"
+      loading="eager"
+      decoding="sync"
+    />
+  </div>
 </body>
 </html>
