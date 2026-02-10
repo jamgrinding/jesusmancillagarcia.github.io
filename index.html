@@ -15,10 +15,9 @@
       background: #ffffff;
     }
 
-    /* Container that respects the image's native size */
     .image-wrapper {
       width: 100%;
-      max-width: 402px; /* EXACT image width */
+      max-width: 402px; 
       margin: 0 auto;
     }
 
@@ -27,11 +26,9 @@
       width: 100%;
       height: auto;
 
-      /* Force crisp rendering */
       image-rendering: -webkit-optimize-contrast;
       image-rendering: crisp-edges;
 
-      /* Prevent subpixel blur */
       transform: translateZ(0);
       backface-visibility: hidden;
     }
