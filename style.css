@@ -45,13 +45,12 @@ body {
 
 /* Pixel Art Title */
 .title {
-    font-family: "Bitcount Grid Single", system-ui; /* Changed 'sans-serif' to 'system-ui' to match Google's recommendation */
+    font-family: "Bitcount Grid Single", system-ui;
     font-size: 77px;
     font-weight: 900;
     margin-bottom: 20px;
     color: #f4f4f5;
     text-transform: lowercase;
-    /* This next part ensures the specific 'Grid' look stays active */
     font-variation-settings: "slnt" 0, "CRSV" 0.5, "ELSH" 0, "ELXP" 0;
 }
 
