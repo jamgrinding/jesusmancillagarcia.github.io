@@ -45,10 +45,12 @@ body {
 
 /* Pixel Art Title */
 .title {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 3.5rem;
+    font-family: "Bitcount Grid Single", sans-serif;
+    font-size: 77px;
+    font-weight: 900;
     margin-bottom: 20px;
     color: #f4f4f5;
+    text-transform: lowercase; /* Keeps the aesthetic from your screenshot */
 }
 
 /* Intro Paragraph */
