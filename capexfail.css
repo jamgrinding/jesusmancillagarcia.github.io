@@ -1,0 +1,62 @@
+:root {
+    --bg-color: rgba(208, 250, 255, 0.7); 
+    --text-color: #424242;
+}
+
+body {
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.post-container {
+    max-width: 500px;
+    width: 100%;
+}
+
+h1 {
+    font-family: 'Special Gothic Expanded One', sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    letter-spacing: -0.06em;
+    line-height: 35px;
+    color: var(--text-color);
+    margin-bottom: 40px;
+}
+
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.hero-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.byline {
+    font-family: 'National Park', sans-serif;
+    font-size: 7px;
+    color: var(--text-color);
+    opacity: 0.45;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.content p {
+    font-family: 'National Park', sans-serif;
+    font-size: 22px;
+    color: var(--text-color);
+    line-height: 1.3;
+    margin-bottom: 25px;
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 28px; line-height: 32px; }
+    .content p { font-size: 19px; }
+}
