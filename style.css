@@ -85,7 +85,6 @@ body {
 /* Individual Link Styles */
 .link {
     font-size: 2.8rem;
-    text-decoration: underline;
     text-decoration-thickness: 3px;
     text-underline-offset: 6px;
     font-weight: bold;
